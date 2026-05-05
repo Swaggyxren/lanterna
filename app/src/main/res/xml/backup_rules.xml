@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- DataStore preferences are safe to back up. -->
+    <include domain="file" path="datastore/" />
+
+    <!-- Never back up: installed JREs, downloaded server jars, server worlds.
+         These are large, host-specific, and would be re-downloadable on a fresh device. -->
+    <exclude domain="file" path="runtimes/" />
+    <exclude domain="file" path="servers/" />
+    <exclude domain="file" path="downloads/" />
+</full-backup-content>

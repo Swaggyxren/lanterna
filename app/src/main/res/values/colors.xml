@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Adaptive launcher icon background gradient stops + brand accents.
+         The Compose theme uses its own palette in ui/theme/Color.kt; these are
+         only for resources that must live in XML (launcher icon, splash, etc.). -->
+    <color name="ic_launcher_bg_top">#FF0E1A2C</color>      <!-- night blue -->
+    <color name="ic_launcher_bg_bottom">#FFFFB23E</color>   <!-- lantern orange -->
+    <color name="brand_lantern_orange">#FFFFB23E</color>
+    <color name="brand_torch_flame">#FFFFD984</color>
+    <color name="brand_arm_skin">#FFE0B084</color>
+    <color name="brand_arm_skin_shadow">#FFB07F58</color>
+    <color name="brand_torch_wood">#FFB07A4A</color>
+    <color name="brand_torch_wood_shadow">#FF7A4F2A</color>
+    <color name="brand_sleeve">#FFD96B2C</color>
+    <color name="brand_sleeve_shadow">#FF8E3A0F</color>
+</resources>
