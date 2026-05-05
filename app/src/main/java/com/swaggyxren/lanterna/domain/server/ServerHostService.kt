@@ -6,9 +6,11 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import androidx.core.app.ServiceCompat
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -27,7 +29,21 @@ class ServerHostService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         ensureChannel()
-        startForeground(NOTIFICATION_ID, buildNotification())
+        // ServiceCompat picks the right startForeground overload per API level.
+        // Android 14+ (target SDK 34+) requires the explicit foregroundServiceType
+        // argument; passing none or the wrong one throws
+        // MissingForegroundServiceTypeException. The type must match what's
+        // declared in AndroidManifest (specialUse).
+        ServiceCompat.startForeground(
+            this,
+            NOTIFICATION_ID,
+            buildNotification(),
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
+            } else {
+                0
+            }
+        )
         return START_STICKY
     }
 
