@@ -5,12 +5,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.plus
 
 /**
  * Cancelable, progress-reporting unit of work.
@@ -39,12 +37,12 @@ class Task<R> private constructor(
     fun start(scope: CoroutineScope) {
         if (job?.isActive == true) return
         _state.value = State.Running
-        // Parent the SupervisorJob to the caller's scope so the task is
-        // cancelled when the scope (e.g. viewModelScope) is cancelled,
-        // preserving structured concurrency. A bare SupervisorJob() would
-        // be orphaned and leak past the caller's lifecycle.
-        val parentJob = scope.coroutineContext[Job]
-        job = scope.plus(SupervisorJob(parentJob)).launch(dispatcher) {
+        // Launch directly on the caller's scope. The block already catches
+        // every Throwable (rethrowing CancellationException so cancellation
+        // still propagates), so no exception escapes to the parent — there
+        // is nothing to isolate with a SupervisorJob, and inserting one
+        // would just leak an unfinished CompletableJob into the scope.
+        job = scope.launch(dispatcher) {
             try {
                 val result = block()
                 _state.value = State.Succeeded(result)

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Themed-icon layer for Android 13+. System tints from wallpaper. -->
+<!-- Themed-icon layer for Android 13+. System derives tint from
+     wallpaper colors at runtime; no android:tint here so the
+     drawable links cleanly without a theme dependency. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
-    android:viewportHeight="108"
-    android:tint="?attr/colorControlNormal">
+    android:viewportHeight="108">
 
     <path
         android:fillColor="#FFFFFF"
