@@ -1,98 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Adaptive icon foreground: stylized first-person blocky arm holding a torch.
-     108×108 viewport, all important content inside the 72×72 safe zone (x/y 18..90).
-     Sleeve extends below the safe zone (intentional — suggests arm continuing). -->
+<!-- Lanterna foreground — pixelated Minecraft-style hanging lantern.
+     12x12 pixel grid, each cell = 6 viewport units, body in the 72x72
+     safe zone. Chain extends slightly above safe zone (intentional). -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- =========================================================== -->
-    <!--   TORCH (drawn before the fist so the fist visually grips it) -->
-    <!-- =========================================================== -->
-
-    <!-- Outer flame: warm orange teardrop -->
     <path
-        android:fillColor="#FFFF7A1C"
-        android:pathData="M54,18
-                          C70,26 70,40 54,46
-                          C38,40 38,26 54,18 Z" />
-
-    <!-- Mid flame: lantern yellow -->
+        android:fillColor="#A06A28"
+        android:pathData="M30,18 L36,18 L36,24 L30,24 Z M36,18 L42,18 L42,24 L36,24 Z M42,18 L48,18 L48,24 L42,24 Z M48,18 L54,18 L54,24 L48,24 Z M54,18 L60,18 L60,24 L54,24 Z M60,18 L66,18 L66,24 L60,24 Z M66,18 L72,18 L72,24 L66,24 Z M72,18 L78,18 L78,24 L72,24 Z M24,24 L30,24 L30,30 L24,30 Z M30,24 L36,24 L36,30 L30,30 Z M36,24 L42,24 L42,30 L36,30 Z M42,24 L48,24 L48,30 L42,30 Z M48,24 L54,24 L54,30 L48,30 Z M54,24 L60,24 L60,30 L54,30 Z M60,24 L66,24 L66,30 L60,30 Z M66,24 L72,24 L72,30 L66,30 Z M72,24 L78,24 L78,30 L72,30 Z M78,24 L84,24 L84,30 L78,30 Z M24,30 L30,30 L30,36 L24,36 Z M78,30 L84,30 L84,36 L78,36 Z M24,36 L30,36 L30,42 L24,42 Z M78,36 L84,36 L84,42 L78,42 Z M24,42 L30,42 L30,48 L24,48 Z M78,42 L84,42 L84,48 L78,48 Z M24,48 L30,48 L30,54 L24,54 Z M78,48 L84,48 L84,54 L78,54 Z M24,54 L30,54 L30,60 L24,60 Z M78,54 L84,54 L84,60 L78,60 Z M24,60 L30,60 L30,66 L24,66 Z M78,60 L84,60 L84,66 L78,66 Z M24,66 L30,66 L30,72 L24,72 Z M78,66 L84,66 L84,72 L78,72 Z M24,72 L30,72 L30,78 L24,78 Z M78,72 L84,72 L84,78 L78,78 Z M24,78 L30,78 L30,84 L24,84 Z M30,78 L36,78 L36,84 L30,84 Z M36,78 L42,78 L42,84 L36,84 Z M42,78 L48,78 L48,84 L42,84 Z M48,78 L54,78 L54,84 L48,84 Z M54,78 L60,78 L60,84 L54,84 Z M60,78 L66,78 L66,84 L60,84 Z M66,78 L72,78 L72,84 L66,84 Z M72,78 L78,78 L78,84 L72,84 Z M78,78 L84,78 L84,84 L78,84 Z M30,84 L36,84 L36,90 L30,90 Z M36,84 L42,84 L42,90 L36,90 Z M42,84 L48,84 L48,90 L42,90 Z M48,84 L54,84 L54,90 L48,90 Z M54,84 L60,84 L60,90 L54,90 Z M60,84 L66,84 L66,90 L60,90 Z M66,84 L72,84 L72,90 L66,90 Z M72,84 L78,84 L78,90 L72,90 Z" />
     <path
-        android:fillColor="#FFFFC44A"
-        android:pathData="M54,24
-                          C64,29 64,40 54,43
-                          C44,40 44,29 54,24 Z" />
-
-    <!-- Hot core: pale highlight -->
+        android:fillColor="#F2A53C"
+        android:pathData="M30,30 L36,30 L36,36 L30,36 Z M72,30 L78,30 L78,36 L72,36 Z M30,36 L36,36 L36,42 L30,42 Z M72,36 L78,36 L78,42 L72,42 Z M30,42 L36,42 L36,48 L30,48 Z M72,42 L78,42 L78,48 L72,48 Z M30,48 L36,48 L36,54 L30,54 Z M72,48 L78,48 L78,54 L72,54 Z M30,54 L36,54 L36,60 L30,60 Z M72,54 L78,54 L78,60 L72,60 Z M30,60 L36,60 L36,66 L30,66 Z M72,60 L78,60 L78,66 L72,66 Z M30,66 L36,66 L36,72 L30,72 Z M72,66 L78,66 L78,72 L72,72 Z M30,72 L36,72 L36,78 L30,78 Z M72,72 L78,72 L78,78 L72,78 Z" />
     <path
-        android:fillColor="#FFFFF2C0"
-        android:pathData="M54,30
-                          C59,32 59,38 54,40
-                          C49,38 49,32 54,30 Z" />
-
-    <!-- Torch shaft (wood) -->
+        android:fillColor="#FFD673"
+        android:pathData="M36,30 L42,30 L42,36 L36,36 Z M42,30 L48,30 L48,36 L42,36 Z M48,30 L54,30 L54,36 L48,36 Z M54,30 L60,30 L60,36 L54,36 Z M60,30 L66,30 L66,36 L60,36 Z M66,30 L72,30 L72,36 L66,36 Z M36,36 L42,36 L42,42 L36,42 Z M42,36 L48,36 L48,42 L42,42 Z M60,36 L66,36 L66,42 L60,42 Z M66,36 L72,36 L72,42 L66,42 Z M36,42 L42,42 L42,48 L36,48 Z M66,42 L72,42 L72,48 L66,48 Z M36,48 L42,48 L42,54 L36,54 Z M66,48 L72,48 L72,54 L66,54 Z M36,54 L42,54 L42,60 L36,60 Z M66,54 L72,54 L72,60 L66,60 Z M36,60 L42,60 L42,66 L36,66 Z M66,60 L72,60 L72,66 L66,66 Z M36,66 L42,66 L42,72 L36,72 Z M42,66 L48,66 L48,72 L42,72 Z M60,66 L66,66 L66,72 L60,72 Z M66,66 L72,66 L72,72 L66,72 Z M36,72 L42,72 L42,78 L36,78 Z M42,72 L48,72 L48,78 L42,78 Z M48,72 L54,72 L54,78 L48,78 Z M54,72 L60,72 L60,78 L54,78 Z M60,72 L66,72 L66,78 L60,78 Z M66,72 L72,72 L72,78 L66,78 Z" />
     <path
-        android:fillColor="#FFB07A4A"
-        android:pathData="M48,42 L60,42 L60,72 L48,72 Z" />
-    <!-- Wood shadow / right side -->
+        android:fillColor="#FFF1AB"
+        android:pathData="M48,36 L54,36 L54,42 L48,42 Z M54,36 L60,36 L60,42 L54,42 Z M42,42 L48,42 L48,48 L42,48 Z M48,42 L54,42 L54,48 L48,48 Z M54,42 L60,42 L60,48 L54,48 Z M60,42 L66,42 L66,48 L60,48 Z M42,48 L48,48 L48,54 L42,54 Z M48,48 L54,48 L54,54 L48,54 Z M54,48 L60,48 L60,54 L54,54 Z M60,48 L66,48 L66,54 L60,54 Z M42,54 L48,54 L48,60 L42,60 Z M48,54 L54,54 L54,60 L48,60 Z M54,54 L60,54 L60,60 L54,60 Z M60,54 L66,54 L66,60 L60,60 Z M42,60 L48,60 L48,66 L42,66 Z M48,60 L54,60 L54,66 L48,66 Z M54,60 L60,60 L60,66 L54,66 Z M60,60 L66,60 L66,66 L60,66 Z M48,66 L54,66 L54,72 L48,72 Z M54,66 L60,66 L60,72 L54,72 Z" />
     <path
-        android:fillColor="#FF7A4F2A"
-        android:pathData="M55,42 L60,42 L60,72 L55,72 Z" />
-    <!-- Wood top cap (slightly darker, where flame burns) -->
-    <path
-        android:fillColor="#FF5C3815"
-        android:pathData="M48,42 L60,42 L60,46 L48,46 Z" />
-    <!-- Wood band detail mid-shaft -->
-    <path
-        android:fillColor="#FF7A4F2A"
-        android:pathData="M48,56 L60,56 L60,58 L48,58 Z" />
-
-    <!-- =========================================================== -->
-    <!--   FIST (covers lower portion of torch shaft)                  -->
-    <!-- =========================================================== -->
-
-    <!-- Fist block (skin) -->
-    <path
-        android:fillColor="#FFE6B98A"
-        android:pathData="M38,55 L70,55 L70,80 L38,80 Z" />
-    <!-- Fist shadow on right -->
-    <path
-        android:fillColor="#FFB07F58"
-        android:pathData="M62,55 L70,55 L70,80 L62,80 Z" />
-    <!-- Knuckle ridges (top edge highlights) -->
-    <path
-        android:fillColor="#FFF2D0A8"
-        android:pathData="M40,55 L46,55 L46,57 L40,57 Z
-                          M48,55 L54,55 L54,57 L48,57 Z
-                          M56,55 L62,55 L62,57 L56,57 Z" />
-    <!-- Finger separations (vertical darker lines) -->
-    <path
-        android:fillColor="#FFB07F58"
-        android:pathData="M46,55 L48,55 L48,80 L46,80 Z
-                          M54,55 L56,55 L56,80 L54,80 Z" />
-
-    <!-- =========================================================== -->
-    <!--   WRIST + SLEEVE                                              -->
-    <!-- =========================================================== -->
-
-    <!-- Wrist skin -->
-    <path
-        android:fillColor="#FFE6B98A"
-        android:pathData="M40,80 L68,80 L68,84 L40,84 Z" />
-    <!-- Sleeve trim (darker top edge of sleeve) -->
-    <path
-        android:fillColor="#FF8E3A0F"
-        android:pathData="M38,84 L70,84 L70,88 L38,88 Z" />
-    <!-- Sleeve body (lantern-orange) -->
-    <path
-        android:fillColor="#FFD96B2C"
-        android:pathData="M40,88 L68,88 L68,108 L40,108 Z" />
-    <!-- Sleeve shadow (right side) -->
-    <path
-        android:fillColor="#FF8E3A0F"
-        android:pathData="M62,88 L68,88 L68,108 L62,108 Z" />
+        android:fillColor="#B5B5B5"
+        android:pathData="M48,6 L54,6 L54,12 L48,12 Z M54,6 L60,6 L60,12 L54,12 Z M48,12 L54,12 L54,18 L48,18 Z M54,12 L60,12 L60,18 L54,18 Z" />
 
 </vector>
