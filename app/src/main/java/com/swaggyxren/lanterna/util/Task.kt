@@ -37,6 +37,9 @@ class Task<R> private constructor(
     fun start(scope: CoroutineScope) {
         if (job?.isActive == true) return
         _state.value = State.Running
+        // Reset progress on every start so observers don't see stale data
+        // from a prior run when a Task is restarted after Failed/Canceled.
+        _progress.value = Progress.None
         // Launch directly on the caller's scope. The block already catches
         // every Throwable (rethrowing CancellationException so cancellation
         // still propagates), so no exception escapes to the parent — there

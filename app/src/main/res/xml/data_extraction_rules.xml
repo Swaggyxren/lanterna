@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ data extraction rules. With no <include> tags, the default
+  rule includes the entire app data directory; we just exclude the heavy
+  bits that should be re-downloaded on a fresh device.
+-->
 <data-extraction-rules>
     <cloud-backup>
-        <include domain="file" path="datastore/" />
         <exclude domain="file" path="runtimes/" />
-        <exclude domain="file" path="servers/" />
         <exclude domain="file" path="downloads/" />
+        <!-- Worlds can be large; opt out of cloud backup but keep them for
+             local device-transfer below so a phone-to-phone migration
+             preserves the user's worlds. -->
+        <exclude domain="file" path="servers/" />
     </cloud-backup>
     <device-transfer>
-        <include domain="file" path="datastore/" />
-        <include domain="file" path="servers/" />
         <exclude domain="file" path="runtimes/" />
         <exclude domain="file" path="downloads/" />
     </device-transfer>
