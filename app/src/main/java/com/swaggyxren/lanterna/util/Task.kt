@@ -39,7 +39,12 @@ class Task<R> private constructor(
     fun start(scope: CoroutineScope) {
         if (job?.isActive == true) return
         _state.value = State.Running
-        job = scope.plus(SupervisorJob()).launch(dispatcher) {
+        // Parent the SupervisorJob to the caller's scope so the task is
+        // cancelled when the scope (e.g. viewModelScope) is cancelled,
+        // preserving structured concurrency. A bare SupervisorJob() would
+        // be orphaned and leak past the caller's lifecycle.
+        val parentJob = scope.coroutineContext[Job]
+        job = scope.plus(SupervisorJob(parentJob)).launch(dispatcher) {
             try {
                 val result = block()
                 _state.value = State.Succeeded(result)
